@@ -1,0 +1,118 @@
+using System;
+using System.IO;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        // Set console background and foreground colors
+        Console.BackgroundColor = ConsoleColor.Black;
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.Clear();
+
+        // Display developer information
+        Console.WriteLine("LOADING ");
+
+        Menu();
+    }
+
+    static void Menu()
+    {
+        // Infinite loop for menu navigation
+        while (true)
+        {
+            Console.Clear(); // Clear the console for fresh output
+            Console.WriteLine("MR BENSON'S SHOP");
+            Console.WriteLine("1. Transaction");
+            Console.WriteLine("2. View");
+            Console.WriteLine("3. Search Data");
+            Console.WriteLine("4. Update Data");
+            Console.WriteLine("5. Delete Data");
+            Console.WriteLine("6. Profit/Loss Data");
+            Console.WriteLine("7. Exit");
+
+            // Display the current date and time
+            Console.WriteLine("\n" + DateTime.Now);
+            Console.Write("Please select an option: ");
+
+            // Capture the user's key press
+            var key = Console.ReadKey(true).KeyChar;
+
+            // Switch case to handle menu selections
+            switch (key)
+            {
+                case '1':
+                    Transaction(); // Call the Transaction method
+                    break;
+                case '2':
+                    ShowDetails(); // Call the ShowDetails method
+                    break;
+                case '3':
+                    ShowBuyingDetails(); // Call the SearchData method
+                    break;
+                case '4':
+                    ShowSellingDetails(); // Call the UpdateData method
+                    break;
+                case '5':
+                    ProfitLossData(); // Call the ProfitLossData method
+                    break;
+                case '6':
+                    ExitProgram(); // Call the ExitProgram method
+                    return; // Exit the program
+                default:
+                    Console.WriteLine("\nInvalid option, try again."); // Handle invalid input
+                    break;
+            }
+        }
+    }
+
+    static void Transaction()
+    {
+        Console.Clear();
+        Console.WriteLine("Transaction functionality will go here.");
+        // Logic for transactions can be added later.
+        Console.WriteLine("\nPress any key to return to the menu...");
+        Console.ReadKey();
+    }
+
+    static void ShowDetails()
+    {
+        Console.Clear();
+        ShowBuyingDetails(); // Display buying details
+        ShowSellingDetails(); // Display selling details
+        Console.WriteLine("\nPress any key to return to the menu...");
+        Console.ReadKey();
+    }
+
+    static void ShowBuyingDetails()
+    {
+        Console.WriteLine
+        filde("C:\Users\lamboto\Desktop\C#\buyingdata.txt");
+
+    }
+
+    static void ShowSellingDetails()
+    {
+        Console.WriteLine("Selling Details:");
+        Console.WriteLine("Item | Quantity | Price");
+        Console.WriteLine("Apple | 90 | $1.50");
+        Console.WriteLine("Banana | 120 | $1.00");
+    }
+
+    static void ProfitLossData()
+    {
+        Console.Clear();
+        Console.WriteLine("Profit and Loss calculation will go here.");
+        // Logic for calculating profits and losses can be added later.
+        Console.WriteLine("\nPress any key to return to the menu...");
+        Console.ReadKey();
+    }
+
+    static void ExitProgram()
+    {
+        Console.Clear();
+        Console.WriteLine("Are you sure you want to exit? Press Y to confirm, any other key to cancel.");
+        var exitOption = Console.ReadKey(true).KeyChar;
+    }
+}
